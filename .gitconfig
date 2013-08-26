@@ -1,0 +1,12 @@
+[user]
+	name = Moshe Katz
+	email = kohenkatz@gmail.com
+
+[color]
+	ui = true
+
+[alias]
+	s        = status
+	unstage  = reset HEAD
+	clear    = reset --hard HEAD
+	uncommit = reset HEAD~1
