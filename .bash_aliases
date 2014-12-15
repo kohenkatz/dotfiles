@@ -23,5 +23,8 @@ alias countfiles='ls -1 | wc -l'
 
 alias back='cd $OLDPWD'
 
+alias puttyclear="clear && printf '\033[3J'"
+alias pclear="clear && printf '\033[3J'"
+
 alias be='bundle exec '
 alias pbe='RAILS_ENV=production bundle exec '
