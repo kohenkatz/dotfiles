@@ -28,3 +28,6 @@ alias pclear="clear && printf '\033[3J'"
 
 alias be='bundle exec '
 alias pbe='RAILS_ENV=production bundle exec '
+
+alias listening='netstat -lptn'
+alias listeningall='netstat -lpn'
