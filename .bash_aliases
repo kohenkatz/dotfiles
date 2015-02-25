@@ -31,3 +31,7 @@ alias pbe='RAILS_ENV=production bundle exec '
 
 alias listening='netstat -lptn'
 alias listeningall='netstat -lpn'
+
+# Enable using aliases in `sudo` by doing the substitution first
+# http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
+alias sudo='sudo '
