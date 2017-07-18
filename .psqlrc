@@ -1,0 +1,24 @@
+-- Based on:
+-- - https://www.citusdata.com/blog/2017/07/16/customizing-my-postgres-shell-using-psqlrc/
+-- - https://robots.thoughtbot.com/an-explained-psqlrc
+-- - https://opensourcedbms.com/dbms/psqlrc-psql-startup-file-for-postgres/
+-- - https://www.digitalocean.com/community/tutorials/how-to-customize-the-postgresql-prompt-with-psqlrc-on-ubuntu-14-04
+
+\set QUIET 1
+
+\pset null '¤'
+
+\set PROMPT1 '(%n@%M:%>) [%/] > '
+
+\timing
+
+-- \x auto -- I don't want this as the default for now, but it's good to know about
+
+\set VERBOSITY verbose
+\set HISTFILE ~/.psql_history- :DBNAME
+-- The next line is so copy-pasted lines with spaces in the will still be added to the history.
+-- If set to `ignoreboth`, that will not be true.
+\set HISTCONTROL ignoredups
+\set COMP_KEYWORD_CASE upper
+
+\unset QUIET
