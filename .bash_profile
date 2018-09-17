@@ -114,4 +114,4 @@ if ! shopt -oq posix; then
 fi
 
 export PAGER=less
-export LESS="-iMSFXx4"
+export LESS="-ciMSFXx4j5#20"
