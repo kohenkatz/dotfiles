@@ -16,6 +16,9 @@ alias nowdate='date +"%Y-%m-%d"'
 alias df='df -H'
 alias du='du -ch'
 
+# The way I like to list processes
+alias psless='ps auxf | less -S'
+
 # For accidental use of DOS-style commands
 alias cls=clear
 
