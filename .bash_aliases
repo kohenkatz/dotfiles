@@ -38,3 +38,10 @@ alias listeningall='netstat -lpn'
 # Enable using aliases in `sudo` by doing the substitution first
 # http://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias sudo='sudo '
+
+# Some easy shortcuts for sudo, with multiple options
+alias sudoi='sudo -i'
+alias sudi='sudo -i'
+alias sudou='sudo -u'
+alias sudoui='sudo -i -u'
+alias sudu='sudo -u'
