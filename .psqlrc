@@ -3,10 +3,13 @@
 -- - https://robots.thoughtbot.com/an-explained-psqlrc
 -- - https://opensourcedbms.com/dbms/psqlrc-psql-startup-file-for-postgres/
 -- - https://www.digitalocean.com/community/tutorials/how-to-customize-the-postgresql-prompt-with-psqlrc-on-ubuntu-14-04
+-- - https://github.com/datachomp/dotfiles/blob/ee3a2d0ec19643b1fa583114200d1614ca05595a/.psqlrc
 
 \set QUIET 1
 
 \pset null '¤'
+\pset linestyle unicode
+\pset border 2
 
 \set PROMPT1 '(%n@%M:%>) [%/] > '
 
@@ -20,5 +23,17 @@
 -- If set to `ignoreboth`, that will not be true.
 \set HISTCONTROL ignoredups
 \set COMP_KEYWORD_CASE upper
+
+\set clear '\\! clear;'
+
+-- useful queries
+\set uptime 'select now() - backend_start as uptime from pg_stat_activity where pid = pg_backend_pid();'
+\set settings 'select name, setting,unit,context from pg_settings;'
+\set conninfo 'select usename, count(*) from pg_stat_activity group by usename;'
+\set activity 'select datname, pid, usename, application_name,client_addr, client_hostname, client_port, query, state from pg_stat_activity;'
+\set dbsize 'SELECT datname, pg_size_pretty(pg_database_size(datname)) db_size FROM pg_database ORDER BY db_size;'
+\set tablesize 'SELECT nspname || \'.\' || relname AS \"relation\", pg_size_pretty(pg_relation_size(C.oid)) AS "size" FROM pg_class C LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) WHERE nspname NOT IN (\'pg_catalog\', \'information_schema\') ORDER BY pg_relation_size(C.oid) DESC LIMIT 40;'
+
+\set sp 'SHOW search_path;'
 
 \unset QUIET
